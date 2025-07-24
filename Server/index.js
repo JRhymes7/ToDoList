@@ -1,14 +1,23 @@
+app.use(cors({
+  origin: 'https://jrhymes7.github.io'
+}));
+
+app.use(express.json());
+
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
 const TodoModel = require('./Models/Todo')
 
 const app = express()
-app.use(cors())
+app.use(cors({
+  origin: 'https://jrhymes7.github.io'
+}));
 app.use(express.json())
 
 const uri = process.env.MONGODB_URI;
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+
 
 app.get('/get', (req,res) => {
     TodoModel.find()
