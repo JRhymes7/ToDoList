@@ -5,7 +5,7 @@ const TodoModel = require('./Models/Todo')
 
 const app = express()
 app.use(cors({
-  origin: 'https://JRhymes7.github.io'
+  origin: 'https://jrhymes7.github.io'
 }));
 app.use(express.json())
 
