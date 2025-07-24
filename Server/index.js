@@ -16,6 +16,9 @@ mongoose.connect(uri, {
   tls: true,
   tlsAllowInvalidCertificates: false
 })
+.then(() => console.log("✅ Connected to MongoDB Atlas"))
+.catch(err => console.error("❌ MongoDB connection error:", err));
+
 
 
 app.get('/get', (req,res) => {
