@@ -10,7 +10,12 @@ app.use(cors({
 app.use(express.json())
 
 const uri = process.env.MONGODB_URI;
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(uri, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  tls: true,
+  tlsAllowInvalidCertificates: false
+})
 
 
 app.get('/get', (req,res) => {
